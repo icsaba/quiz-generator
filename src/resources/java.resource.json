@@ -1,0 +1,26 @@
+{
+	"name": "JavaScript Quiz Questions",
+	"qa": [
+		{
+			"question": "this is some text?",
+			"code": "class MyClass{\n\tMyClass(){}\n}",
+			"language": "java",
+			"answers": [
+				{"text":"maybe"},
+				{"text":"no"},
+				{"text":"of course", "correct":true},
+				{"text":"yes"}
+			]
+		},
+		{
+			"question": "this is some text?",
+			"language": "javascript",
+			"answers": [
+				{"text":"maybe"},
+				{"text":"no"},
+				{"text":"of course", "correct":true},
+				{"text":"yes"}
+			]
+		}
+	]
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../node_modules/highlightjs/styles/default.css">
+        <script src="../../node_modules/highlightjs/highlight.pack.js"></script>
+        <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+        <style>
+            html, body{
+                color: #2c3e50;
+            }
+            .question {
+                border: solid 1px #2c3e50;
+                border-radius: 5px;
+                overflow: hidden;
+                position: relative;
+                padding: 5px;
+                margin: 3px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .row {
+                margin: 0 !important;
+            }
+            h1 {
+                margin-bottom: 25px;
+            }
+            .correct {
+                background: yellow;
+            }
+            ul li {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            $(document).ready(function() {
+                $('pre code').each(function(i, block) {
+                   hljs.highlightBlock(block);
+                });
+            });
+        </script>
+        <div class="container">
+            <h1>{{ test.name }}</h1>
+            {% for test in test.qa %}
+            <div class="question">
+                <div class="row">
+                    <h4>{{test.question}}</h4>
+                </div>
+                <div class="row">
+                    <div class="{{'col-md-6 col-sm-6 col-xs-6' if test.code else 'hidden' }}">
+                        <pre><code class="{{ test.language }}">{{ test.code }}</code></pre>
+                    </div>
+                    <div class="{{'col-md-6 col-sm-6 col-xs-6' if test.code else 'col-md-12 col-sm-12 col-xs-12' }}">
+                        <ul>
+                            {% for answer in test.answers %}
+                            <li class="{{'correct' if answer.correct and show_correct_answer }}">{{ answer.text }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </body>
+</html>

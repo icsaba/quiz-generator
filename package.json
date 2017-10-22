@@ -1,0 +1,24 @@
+{
+  "name": "quiz-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icsaba/quiz-generator.git"
+  },
+  "author": "icsaba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/icsaba/quiz-generator/issues"
+  },
+  "homepage": "https://github.com/icsaba/quiz-generator#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "highlightjs": "^9.10.0",
+    "jquery": "^3.2.1"
+  }
+}
