@@ -4,7 +4,7 @@ Generates quiz from json using jinja2, python and highlightjs, basically you don
 It formats and highlights the sample code if it is given.
 You can see example jsons in the resources folder.
 
-## Usages
+## Usage
 Geneate without answer
 ```python generate.py```
 
